@@ -65,3 +65,24 @@ new Numberic().add(1, 2)
 ```
 
 ### mobx 常用 API 可观察的数据（observable）
+
+#### 什么是 observable
+- 是一种让数据的变化可以被观察的方法
+
+```js
+import {observable, isArrayLike} from 'mobx'
+
+// array object map
+const arr = observable(['a', 'b', 'c'])
+
+console.log(arr, Array.isArray(arr), isArrayLike(arr), arr[0], arr[1])
+
+// observable.box 包装基本数据类型
+var num = observable.box(20)
+var str = observable.box('hello')
+var bool = observable.box(true)
+
+num.set(50)
+
+console.log(num.get())
+```
