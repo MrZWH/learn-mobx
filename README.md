@@ -85,4 +85,68 @@ var bool = observable.box(true)
 num.set(50)
 
 console.log(num.get())
+
+
+class Store {
+  @observable array = []
+  @observable obj = {}
+  @observable map = new Map()
+  
+  @observable string = 'hello'
+  @observable number = 29
+  @observable bool = true
+  
+}
+```
+
+### 对可观察的数据作出反应
+观察数据的变化方式
+- computed
+- autorun
+- when
+- Reaction
+
+```js
+import {observable, computed, autorun, when, reaction} from 'mobx'
+
+class Store {
+  @observable array = []
+  @observable obj = {}
+  @observable map = new Map()
+  
+  @observable string = 'hello'
+  @observable number = 29
+  @observable bool = true
+  
+  @computed get mixed() {
+    return store.string + '/' + store.number
+  }
+}
+
+//computed
+var store = new Store();
+
+// var foo = computed(function() {return store.string + '/' + store.number})
+
+// foo.observe(function(change){
+//   console.log(change)
+// })
+
+// store.string = 'world';
+// store.number = 39;
+
+// autorun
+// autorun(() => {
+//   console.log(store.string + '/' + store.number)
+// })
+
+// when
+// when(() => store.bool, () => console.log("it's true"))
+
+// store.bool = true
+
+// reaction
+reaction(() => [store.string, store.number], arr => console.log(arr.join('/')))
+// store.string = 'world';
+// store.number = 39;
 ```
