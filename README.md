@@ -150,3 +150,42 @@ reaction(() => [store.string, store.number], arr => console.log(arr.join('/')))
 // store.string = 'world';
 // store.number = 39;
 ```
+
+### 修改可观察数据(action)
+
+```js
+import {runInAction, observable, computed, autorun, when, reaction, action} from 'mobx'
+
+class Store {
+  @observable array = []
+  @observable obj = {}
+  @observable map = new Map()
+  
+  @observable string = 'hello'
+  @observable number = 29
+  @observable bool = true
+  
+  @computed get mixed() {
+    return store.string + '/' + store.number
+  }
+  
+  @action bar() {
+    this.action = 'world';
+    this.number = 30
+  }
+}
+
+var store = new Store()
+
+reaction(() => [store.string, store.number], arr => console.log(arr.join('/')))
+
+// var bar = store.bar
+// bar()
+
+runInAction('modify', () => {
+  store.action = 'world';
+  store.number = 30
+})
+```
+
+### 使用 mobx-react
