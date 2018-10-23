@@ -4,6 +4,16 @@
 - 状态变化引起的副作用应该被自动触发
 - action -> state -> reaction
 
+### class 类语法
+需安装：
+```
+npm i webpack webpack-cli babel-core babel-preset-env babel-loader -D
+```
+定义类的成员属性时，要识别语法需安装：
+```
+npm i babel-plugin-transform-class-properties -D
+```
+
 ### decorator
 支持需安装：
 ```
@@ -189,3 +199,8 @@ runInAction('modify', () => {
 ```
 
 ### mobx 应用使用 mobx-react
+```
+npm i babel-preset-react -D
+```
+
+## 实现一个 TODOlist
