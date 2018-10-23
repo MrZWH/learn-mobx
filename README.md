@@ -188,4 +188,4 @@ runInAction('modify', () => {
 })
 ```
 
-### 使用 mobx-react
+### mobx 应用使用 mobx-react
