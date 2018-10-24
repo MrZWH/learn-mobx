@@ -204,3 +204,17 @@ npm i babel-preset-react -D
 ```
 
 ## 实现一个 TODOlist
+
+## 最佳实践
+
+### 常用的工具函数
+- observe
+- toJS
+- trace
+- spy
+
+### 提升性能
+三法则：
+- 细粒度拆分视图组件
+- 使用专用组件处理列表
+- 尽可能晚的解构可观察数据
