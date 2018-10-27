@@ -4,7 +4,7 @@
 - 状态变化引起的副作用应该被自动触发
 - action -> state -> reaction
 
-### 巩固 class 类语法
+### 关于 class 类语法
 需安装：
 ```
 npm i webpack webpack-cli babel-core babel-preset-env babel-loader -D
@@ -14,7 +14,7 @@ npm i webpack webpack-cli babel-core babel-preset-env babel-loader -D
 npm i babel-plugin-transform-class-properties -D
 ```
 
-### decorator
+### decorator 装饰器
 支持需安装：
 ```
 npm install babel-plugin-transform-decorators-legacy -D
